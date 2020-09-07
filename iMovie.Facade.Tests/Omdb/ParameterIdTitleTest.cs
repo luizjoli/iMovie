@@ -1,5 +1,5 @@
+using iMovie.Domain.Service.Omdb;
 using Xunit;
-using iMovie.Facade.Omdb.Domain;
 
 namespace iMovie.Facade.Tests.Omdb
 {
@@ -49,7 +49,7 @@ namespace iMovie.Facade.Tests.Omdb
         public void ValidateIdOrTitle_AllFilled_IsValid()
         {
             //Arrange
-            var parameters = new ParameterIdTitle("tt0120338", "Titanic", "movie", 1997, "full", "xml", 2);
+            var parameters = new ParameterIdTitle("tt0120338", "Titanic", "movie", 1997, "full", "xml", "2");
             //Act
             var result = parameters.IsOk();
             //Assert
@@ -61,7 +61,7 @@ namespace iMovie.Facade.Tests.Omdb
         public void ValidateIdOrTitle_NotAllFilled_IsValid()
         {
             //Arrange
-            var parameters = new ParameterIdTitle("tt0120338", "Titanic", null, null, null, "xml", 2);
+            var parameters = new ParameterIdTitle("tt0120338", "Titanic", null, null, null, "xml", "2");
             //Act
             var result = parameters.IsOk();
             //Assert
@@ -73,7 +73,7 @@ namespace iMovie.Facade.Tests.Omdb
         public void ValidateIdOrTitle_AllFilled_IsInvalid()
         {
             //Arrange
-            var parameters = new ParameterIdTitle(string.Empty, string.Empty, "cd", -1000, "little", "yaml", -1);
+            var parameters = new ParameterIdTitle(string.Empty, string.Empty, "cd", -1000, "little", "yaml", string.Empty);
             //Act
             var result = parameters.IsOk();
             //Assert

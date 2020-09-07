@@ -1,4 +1,4 @@
-namespace iMovie.Facade.Omdb.Domain
+namespace iMovie.Domain.Service.Omdb
 {
     public class Rating
     {

@@ -8,6 +8,6 @@ namespace iMovie.Core.Movie.Interface
     {
         public Task<MovieData> GetMovie(string name, string id);
 
-        public Task<List<MovieData>> GetMovies(string search);
+        public Task<IEnumerable<MovieShortDetail>> GetMovieByTerm(string search);
     }
 }

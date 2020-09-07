@@ -1,6 +1,5 @@
-using System;
+using iMovie.Domain.Service.Omdb;
 using Xunit;
-using iMovie.Facade.Omdb.Domain;
 
 namespace iMovie.Facade.Tests.Omdb
 {
@@ -37,7 +36,7 @@ namespace iMovie.Facade.Tests.Omdb
         public void ValidateSearch_AllFilled_IsValid()
         {
             //Arrange
-            var parameters = new ParameterSearch("Titanic", "movie", 1997, "xml", 1, 2);
+            var parameters = new ParameterSearch("Titanic", "movie", 1997, "xml", 1, string.Empty);
             //Act
             var result = parameters.IsOk();
             //Assert
@@ -49,7 +48,7 @@ namespace iMovie.Facade.Tests.Omdb
         public void ValidateSearch_NotAllFilled_IsValid()
         {
             //Arrange
-            var parameters = new ParameterSearch("Titanic", null, null, "xml", 2, 2);
+            var parameters = new ParameterSearch("Titanic", null, null, "xml", 2, "2");
             //Act
             var result = parameters.IsOk();
             //Assert
@@ -61,7 +60,7 @@ namespace iMovie.Facade.Tests.Omdb
         public void ValidateSearch_AllFilled_IsInvalid()
         {
             //Arrange
-            var parameters = new ParameterSearch(string.Empty, "cd", -1000, "yaml", -1, -1);
+            var parameters = new ParameterSearch(string.Empty, "cd", -1000, "yaml", -1, string.Empty);
             //Act
             var result = parameters.IsOk();
             //Assert

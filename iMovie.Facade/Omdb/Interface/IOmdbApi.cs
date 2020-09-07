@@ -1,5 +1,5 @@
+using iMovie.Domain.Service.Omdb;
 using System.Threading.Tasks;
-using iMovie.Facade.Omdb.Domain;
 
 namespace iMovie.Facade.Omdb.Interface
 {

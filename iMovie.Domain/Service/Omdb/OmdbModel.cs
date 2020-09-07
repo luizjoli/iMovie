@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace iMovie.Facade.Omdb.Domain
+namespace iMovie.Domain.Service.Omdb
 {
     public class OmdbModel
     {
@@ -19,9 +19,9 @@ namespace iMovie.Facade.Omdb.Domain
         public string Awards { get; set; }
         public string Poster { get; set; }
         public string Metascore { get; set; }
-        public string imdbRating { get; set; }
-        public string imdbVotes { get; set; }
-        public string imdbID { get; set; }
+        public string ImdbRating { get; set; }
+        public string ImdbVotes { get; set; }
+        public string ImdbID { get; set; }
         public string Type { get; set; }
         public string DVD { get; set; }
         public string BoxOffice { get; set; }
@@ -29,7 +29,7 @@ namespace iMovie.Facade.Omdb.Domain
         public string Website { get; set; }
         public string Response { get; set; }
 
-        public List<Rating> Ratings { get; set; }
+        public IEnumerable<Rating> Ratings { get; set; }
 
     }
 }

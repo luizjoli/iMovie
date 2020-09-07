@@ -1,8 +1,9 @@
 using Xunit;
-using iMovie.Facade.Omdb.Domain;
 using iMovie.Facade.Omdb;
 using System;
 using Moq;
+using iMovie.Domain.Service.Omdb;
+using System.Linq;
 
 namespace iMovie.Facade.Tests.Omdb
 {
@@ -76,7 +77,7 @@ namespace iMovie.Facade.Tests.Omdb
             var result = await omdbApi.GetBySearchAsync(parameter);
             //Assert
             Assert.NotNull(result);
-            Assert.True(result.Search.Count > 1);
+            Assert.True(result.Search.Count() > 1);
         }
 
         [Fact(DisplayName = "Omdb - Busca um termo inválido no serviço")]
@@ -89,7 +90,7 @@ namespace iMovie.Facade.Tests.Omdb
             var result = await omdbApi.GetBySearchAsync(parameter);
             //Assert
             Assert.NotNull(result);
-            Assert.True(result.Search.Count == 0);
+            Assert.True(result.Search.Count() == 0);
         }
     }
 }

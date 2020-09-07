@@ -1,36 +1,59 @@
 using iMovie.Core.Movie.Interface;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 using iMovie.Domain;
-using Microsoft.Extensions.Configuration;
 using iMovie.Facade.Omdb.Interface;
-using iMovie.Facade.Omdb.Domain;
+using iMovie.Domain.Service.Omdb;
+using AutoMapper;
+using System;
+using System.Collections.Generic;
 
-namespace iMovie.Core.Movie {
-    public class SearcMovie : ISearchMovie {
+namespace iMovie.Core.Movie
+{
+    public class SearchMovie : ISearchMovie
+    {
 
-        private readonly IConfiguration _config;
+        private readonly IMapper _mapper;
         private readonly IOmdbApi _omdbApi;
 
-        public SearcMovie(IConfiguration config, IOmdbApi omdbApi){
-            _config = config;             
+        public SearchMovie(IMapper mapper, IOmdbApi omdbApi)
+        {
+
+            _mapper = mapper;
             _omdbApi = omdbApi;
         }
 
-        public async Task<MovieData> GetMovie(string name, string id){
-            
+        public async Task<MovieData> GetMovie(string name, string id)
+        {
             var parameter = new ParameterIdTitle(id, name);
-            var data = _omdbApi.GetByIdOrTitleAsync(parameter);
+            var data = await _omdbApi.GetByIdOrTitleAsync(parameter);
 
-            //Mapper.CreateMap<OmdbModel,MovieData>();
+            if (data != null)
+            {
+                var movieData = _mapper.Map<MovieData>(data);                
+                return movieData;
+            }
+            else {
+                throw new Exception("Não encontrado nenhum título");
+            }
+            
 
-            //var movieData = Mapper.Map<>
-
-            return new MovieData();
+            
         }
 
-        public async Task<List<MovieData>> GetMovies(string search){
-            return new List<MovieData>();
+        public async Task<IEnumerable<MovieShortDetail>> GetMovieByTerm(string term)
+        {
+            var parameter = new ParameterSearch(term);
+            var data = await _omdbApi.GetBySearchAsync(parameter);
+
+            if (data != null)
+            {
+                var movieData = _mapper.Map<IEnumerable<MovieShortDetail>>(data.Search);                
+                return movieData;
+            }
+            else
+            {
+                throw new Exception("Não encontrado nenhum título");
+            }
         }
     }
 }

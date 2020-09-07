@@ -2,11 +2,12 @@
 
   <ItemGroup>
     <ProjectReference Include="..\iMovie.Domain\iMovie.Domain.csproj" />
+    <ProjectReference Include="..\iMovie.Service\iMovie.Service.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FluentValidation" Version="9.1.3" />
     <PackageReference Include="Microsoft.Extensions.Configuration" Version="3.1.7" />
+    <PackageReference Include="RestEase" Version="1.5.0" />
   </ItemGroup>
 
   <PropertyGroup>

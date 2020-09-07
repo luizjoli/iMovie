@@ -1,17 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30011.22
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iMovie.Api", "iMovie.Api\iMovie.Api.csproj", "{9D048812-754E-4906-9484-5C3F21FC9C27}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iMovie.Api", "iMovie.Api\iMovie.Api.csproj", "{9D048812-754E-4906-9484-5C3F21FC9C27}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iMovie.Facade", "iMovie.Facade\iMovie.Facade.csproj", "{DD3CAF64-E335-4B7C-A911-1DC785431473}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iMovie.Facade", "iMovie.Facade\iMovie.Facade.csproj", "{DD3CAF64-E335-4B7C-A911-1DC785431473}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iMovie.Domain", "iMovie.Domain\iMovie.Domain.csproj", "{E6352AD2-4F25-4CF5-A867-E57E34E8A170}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iMovie.Domain", "iMovie.Domain\iMovie.Domain.csproj", "{E6352AD2-4F25-4CF5-A867-E57E34E8A170}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iMovie.Facade.Tests", "iMovie.Facade.Tests\iMovie.Facade.Tests.csproj", "{C7BA6C19-F42E-49E6-BE1B-DD47B86E02EB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iMovie.Facade.Tests", "iMovie.Facade.Tests\iMovie.Facade.Tests.csproj", "{C7BA6C19-F42E-49E6-BE1B-DD47B86E02EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iMovie.Core", "iMovie.Core\iMovie.Core.csproj", "{CE1C7449-2C01-456A-AEE0-0F16C5EE0726}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "iMovie.Core", "iMovie.Core\iMovie.Core.csproj", "{CE1C7449-2C01-456A-AEE0-0F16C5EE0726}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "iMovie.Service", "iMovie.Service\iMovie.Service.csproj", "{51B44198-B2E4-4474-ABB4-5BB195074DFD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +23,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{9D048812-754E-4906-9484-5C3F21FC9C27}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -86,5 +85,23 @@ Global
 		{CE1C7449-2C01-456A-AEE0-0F16C5EE0726}.Release|x64.Build.0 = Release|Any CPU
 		{CE1C7449-2C01-456A-AEE0-0F16C5EE0726}.Release|x86.ActiveCfg = Release|Any CPU
 		{CE1C7449-2C01-456A-AEE0-0F16C5EE0726}.Release|x86.Build.0 = Release|Any CPU
+		{51B44198-B2E4-4474-ABB4-5BB195074DFD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51B44198-B2E4-4474-ABB4-5BB195074DFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51B44198-B2E4-4474-ABB4-5BB195074DFD}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{51B44198-B2E4-4474-ABB4-5BB195074DFD}.Debug|x64.Build.0 = Debug|Any CPU
+		{51B44198-B2E4-4474-ABB4-5BB195074DFD}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{51B44198-B2E4-4474-ABB4-5BB195074DFD}.Debug|x86.Build.0 = Debug|Any CPU
+		{51B44198-B2E4-4474-ABB4-5BB195074DFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51B44198-B2E4-4474-ABB4-5BB195074DFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51B44198-B2E4-4474-ABB4-5BB195074DFD}.Release|x64.ActiveCfg = Release|Any CPU
+		{51B44198-B2E4-4474-ABB4-5BB195074DFD}.Release|x64.Build.0 = Release|Any CPU
+		{51B44198-B2E4-4474-ABB4-5BB195074DFD}.Release|x86.ActiveCfg = Release|Any CPU
+		{51B44198-B2E4-4474-ABB4-5BB195074DFD}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5AB23989-9869-4085-814B-B717636FBE53}
 	EndGlobalSection
 EndGlobal

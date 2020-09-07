@@ -1,6 +1,6 @@
 using FluentValidation;
 
-namespace iMovie.Facade.Omdb.Domain
+namespace iMovie.Domain.Service.Omdb
 {
         public class ParameterSearchValidate : AbstractValidator<ParameterSearch>
     {
@@ -38,7 +38,7 @@ namespace iMovie.Facade.Omdb.Domain
 
 
             RuleFor(p => p.Version).            
-            GreaterThanOrEqualTo(1).
+            NotEmpty().
             WithMessage(VersionMsg);
 
 

@@ -1,6 +1,6 @@
 using FluentValidation.Results;
 
-namespace iMovie.Facade.Omdb.Domain
+namespace iMovie.Domain.Service.Omdb
 {
     public class ParameterIdTitle
     {
@@ -9,7 +9,7 @@ namespace iMovie.Facade.Omdb.Domain
             Title = title;
         }
 
-        public ParameterIdTitle(string imdbId, string title, string type, int? year,string plot, string returnType, int? version){
+        public ParameterIdTitle(string imdbId, string title, string type, int? year,string plot, string returnType, string version){
             Id = imdbId;
             Title = title;
             Type =  string.IsNullOrEmpty(type) ? Type : type;            
@@ -30,7 +30,7 @@ namespace iMovie.Facade.Omdb.Domain
 
         public string Return { get; private set; } = "json";
 
-        public int? Version { get; private set; } = 1;
+        public string Version { get; private set; } = "1";
 
         public ValidationResult IsOk()
         {

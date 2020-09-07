@@ -1,4 +1,4 @@
-namespace iMovie.Facade.Omdb.Domain
+namespace iMovie.Domain.Service.Omdb
 {
     public class OmdbItemModel {
 
@@ -6,7 +6,7 @@ namespace iMovie.Facade.Omdb.Domain
 
         public string Year { get; set; }
 
-        public string imdbID { get; set; }
+        public string ImdbID { get; set; }
 
         public string Type { get; set; }
 

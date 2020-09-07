@@ -1,6 +1,6 @@
 using FluentValidation.Results;
 
-namespace iMovie.Facade.Omdb.Domain
+namespace iMovie.Domain.Service.Omdb
 {
     public class ParameterSearch
     {
@@ -9,13 +9,14 @@ namespace iMovie.Facade.Omdb.Domain
             Search = search;
         }
 
-        public ParameterSearch(string search, string type, int? year, string returnType, int? page, int? version)
+        public ParameterSearch(string search, string type, int? year, string returnType, int? page, string version)
         {
             Search = search;
             Type = string.IsNullOrEmpty(type) ? Type : type;            
             Return = string.IsNullOrEmpty(returnType) ? Return : returnType;
             Version = version;
             Year = year;
+            Page = page;
 
         }
 
@@ -29,7 +30,7 @@ namespace iMovie.Facade.Omdb.Domain
 
         public int? Page { get; private set; } = 1;
 
-        public int? Version { get; private set; } = 1;
+        public string Version { get; private set; } = "1";
 
         public ValidationResult IsOk()
         {
